@@ -21,10 +21,6 @@ function AccountOperations() {
   }
 
   function handleWithdrawal() {
-    if (withdrawalAmount > balance) {
-      alert("Insufficient funds");
-      return;
-    }
     dispatch(withdraw(withdrawalAmount));
     setWithdrawalAmount("");
   }

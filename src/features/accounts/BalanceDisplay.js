@@ -8,12 +8,9 @@ function formatCurrency(value) {
   }).format(value);
 }
 
-function BalanceDisplay({ balance }) {
+function BalanceDisplay() {
+  const balance = useSelector((store) => store.account.balance);
   return <div className="balance">{formatCurrency(balance)} lv.</div>;
 }
-function mapPropsToState(state) {
-  return {
-    balance: state.account.balance,
-  };
-}
-export default connect(mapPropsToState)(BalanceDisplay);
+
+export default BalanceDisplay;
